@@ -57,7 +57,6 @@ public class XO {
                 XOO[row][col] = 'O';
                 if (whoWon(XOO) == 'O') {
                     XOO[row][col] = ' ';
-//                    System.out.println(i);
                     return i;
                 }
                 XOO[row][col] = ' ';
@@ -75,8 +74,6 @@ public class XO {
                         Xrow = numToXY(j)[0];
                         Xcol = numToXY(j)[1];
                         XOO[Xrow][Xcol] = 'X';
-                        System.out.println("Board!");
-                        printBoard(XOO);
                         if (whoWon(XOO) == 'X') {
                             XOO[Xrow][Xcol] = ' ';
                             xCanWin = true;
@@ -87,7 +84,6 @@ public class XO {
 
                 XOO[row][col] = ' ';
                 if (!xCanWin) {
-                    System.out.println(i);
                     return i;
                 }
                 xCanWin = false;
@@ -95,7 +91,6 @@ public class XO {
         }
 
         int randomSpot = (int) (Math.random() * 9) + 1;
-        System.out.println("random");
         while(isUsed(XOO, randomSpot)) {
             randomSpot = (int) (Math.random() * 9) + 1;
         }
@@ -162,13 +157,12 @@ public class XO {
                 Ospot = bestMove(XOO);
                 row = numToXY(Ospot)[0];
                 col = numToXY(Ospot)[1];
+                System.out.println("Computer Chose " + Ospot + "! ");
                 XOO[row][col] = 'O';
                 moves++;
             }
-            printBoard(XOO);
             WhoWon = whoWon(XOO);
 
-            System.out.println(moves);
             if (moves == 9) {
                 WhoWon = 't';
             }
