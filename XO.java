@@ -37,6 +37,10 @@ public class XO {
         int Xrow;
         int Xcol;
 
+        if (XOO[2][2] == 'X' && XOO[1][1] == 'X' )
+            if(!isUsed(XOO, 3))
+                return 3;
+
         for (int i = 1; i <= 9; i++) {
             if (!isUsed(XOO, i)) {
                 row = numToXY(i)[0];
@@ -80,11 +84,6 @@ public class XO {
                 xCanWin = false;
             }
         }
-
-
-
-
-
 
         int randomSpot = (int) (Math.random() * 9) + 1;
         System.out.println("random");
