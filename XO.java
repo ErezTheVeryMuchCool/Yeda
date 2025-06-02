@@ -12,6 +12,7 @@ public class XO {
     public static int xyToNum(int nums[]) {
         return nums[0] * 3 + nums[1] + 1;
     }
+    
     public static void printBoard(char[][] XOO) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
